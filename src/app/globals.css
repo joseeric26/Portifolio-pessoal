@@ -1,44 +1,46 @@
 @import "tailwindcss";
 
 :root {
-  --paper: #f5f6f8;
-  --paper-warm: #edf1f5;
-  --ink: #1b2533;
-  --muted: #5c6776;
-  --line: #d7dde5;
-  --navy: #19344f;
-  --navy-deep: #11283e;
-  --gold: #f0c66b;
-  --gold-strong: #e7b44f;
-  --white: #fffefb;
-  --surface: #fff;
-  --header-bg: rgb(245 246 248 / 95%);
-  --soft-fill: #edf1f5;
-  --tag-bg: #f1f5f9;
-  --tag-text: #3c5874;
-  --hero-bg: #19344f;
-  --contact-bg: #14283e;
+  --paper: #f5f6f7;
+  --paper-warm: #edf0f3;
+  --ink: #303943;
+  --muted: #59636f;
+  --line: #d7dde3;
+  --navy: #405a72;
+  --gold: #d6bd89;
+  --gold-strong: #c8ae78;
+  --gold-ink: #303943;
+  --white: #fcfcfd;
+  --surface: #fcfcfd;
+  --header-bg: rgb(245 246 247 / 95%);
+  --soft-fill: #edf0f3;
+  --tag-bg: #f0f3f6;
+  --tag-text: #405469;
+  --brand-bg: #34485b;
+  --hero-bg: #3a4d61;
+  --contact-bg: #34485b;
   --content-width: 1160px;
 }
 
 :root[data-theme="dark"] {
-  --paper: #111821;
-  --paper-warm: #171f29;
-  --ink: #e9edf4;
-  --muted: #adb7c3;
-  --line: #303c4b;
-  --navy: #9bb9d6;
-  --navy-deep: #d9e7f4;
-  --gold: #f0c66b;
-  --gold-strong: #f6d990;
-  --white: #f7f8fb;
-  --surface: #1a2531;
-  --header-bg: rgb(17 24 33 / 92%);
-  --soft-fill: #202d3b;
-  --tag-bg: #263647;
-  --tag-text: #d2e0ed;
-  --hero-bg: #20364e;
-  --contact-bg: #0b1420;
+  --paper: #191f26;
+  --paper-warm: #202831;
+  --ink: #e2e5e9;
+  --muted: #a9b1ba;
+  --line: #353f49;
+  --navy: #a8b7c6;
+  --gold: #d6bd89;
+  --gold-strong: #e2c990;
+  --gold-ink: #303943;
+  --white: #eceff3;
+  --surface: #222a33;
+  --header-bg: rgb(25 31 38 / 92%);
+  --soft-fill: #272f38;
+  --tag-bg: #29323b;
+  --tag-text: #cbd4dd;
+  --brand-bg: #31475b;
+  --hero-bg: #33475b;
+  --contact-bg: #293a4a;
   color-scheme: dark;
 }
 
@@ -109,7 +111,7 @@ summary:focus-visible {
   transform: translateY(-160%);
   border-radius: 0.35rem;
   background: var(--gold);
-  color: var(--ink);
+  color: var(--gold-ink);
   font-weight: 700;
 }
 
@@ -157,7 +159,7 @@ summary:focus-visible {
   height: 2rem;
   place-items: center;
   border-radius: 0.4rem;
-  background: var(--navy);
+  background: var(--brand-bg);
   color: var(--gold);
   font-size: 0.72rem;
   letter-spacing: 0;
@@ -242,7 +244,7 @@ summary:focus-visible {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--hero-bg);
+  background: var(--navy);
   transition: transform 220ms cubic-bezier(.22, 1, .36, 1);
 }
 
@@ -304,8 +306,8 @@ summary:focus-visible {
   width: 0.55rem;
   height: 0.55rem;
   border-radius: 50%;
-  background: #b8801e;
-  box-shadow: 0 0 0 4px rgb(184 128 30 / 18%);
+  background: #a88a53;
+  box-shadow: 0 0 0 4px rgb(168 138 83 / 16%);
 }
 
 .hero-copy h1 {
@@ -388,7 +390,7 @@ summary:focus-visible {
 
 .button--gold {
   background: var(--gold);
-  color: var(--ink);
+  color: var(--gold-ink);
 }
 
 .button--gold:hover {
@@ -445,7 +447,7 @@ summary:focus-visible {
   place-items: center;
   isolation: isolate;
   border-radius: 1rem;
-  background: var(--navy);
+  background: var(--hero-bg);
 }
 
 .hero-art__grid {
@@ -621,7 +623,7 @@ summary:focus-visible {
   place-items: center;
   border-radius: 50%;
   background: var(--gold);
-  color: var(--navy-deep);
+  color: var(--gold-ink);
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.7rem;
   font-weight: 700;
