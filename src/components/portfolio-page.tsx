@@ -212,7 +212,7 @@ export function PortfolioPage() {
               ))}
             </ul>
             <div className="hero-actions">
-              <a className="button button--lime" href="#projetos">
+              <a className="button button--gold" href="#projetos">
                 Ver projetos <span aria-hidden="true">↓</span>
               </a>
               {email && (
@@ -571,7 +571,7 @@ export function PortfolioPage() {
                     <span className="contact-panel__label">E-mail</span>
                     <a href={`mailto:${email}`}>{email}</a>
                     <div className="contact-email__actions">
-                      <a className="button button--lime" href={`mailto:${email}`}>
+                      <a className="button button--gold" href={`mailto:${email}`}>
                         Enviar e-mail <span aria-hidden="true">↗</span>
                       </a>
                       <CopyEmailButton email={email} />
