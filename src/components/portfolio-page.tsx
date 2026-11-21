@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useState } from "react";
+
 import { CopyEmailButton } from "@/components/copy-email-button";
 import { portfolio } from "@/data/portfolio";
 
@@ -123,6 +127,21 @@ export function PortfolioPage() {
   const github = portfolio.profiles.github;
   const instagram = portfolio.profiles.instagram;
   const email = portfolio.contacts.email.address;
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const currentTheme =
+      document.documentElement.dataset.theme === "dark" ? "dark" : "light";
+    setTheme(currentTheme);
+  }, []);
+
+  function toggleTheme() {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    document.documentElement.dataset.theme = nextTheme;
+    document.documentElement.style.colorScheme = nextTheme;
+    localStorage.setItem("portfolio-theme", nextTheme);
+  }
 
   return (
     <>
@@ -142,6 +161,25 @@ export function PortfolioPage() {
             </a>
           ))}
         </nav>
+        <button
+          className="theme-toggle"
+          type="button"
+          role="switch"
+          aria-checked={theme === "dark"}
+          aria-label={
+            theme === "dark"
+              ? "Ativar tema claro"
+              : "Ativar tema escuro"
+          }
+          onClick={toggleTheme}
+        >
+          <span className="theme-toggle__icon" aria-hidden="true">
+            {theme === "dark" ? "☾" : "☀"}
+          </span>
+          <span className="theme-toggle__track" aria-hidden="true">
+            <span className="theme-toggle__thumb" />
+          </span>
+        </button>
       </header>
 
       <main id="conteudo">
