@@ -191,26 +191,33 @@ export function PortfolioPage() {
           <div className="hero-copy">
             <p className="hero-eyebrow">
               <span className="status-dot" aria-hidden="true" />
-              {portfolio.presentation.eyebrow}
+              Em busca do primeiro estágio
             </p>
             <h1 id="introducao-titulo">
               Olá, eu sou
               <br />
               <span>José Eric.</span>
             </h1>
-            <p className="hero-full-name">{portfolio.name}</p>
-            <p className="hero-title">{portfolio.title}</p>
-            <p className="hero-summary">{portfolio.presentation.summary}</p>
-            <p className="hero-introduction">
-              {portfolio.presentation.introduction}
+            <p className="hero-title">
+              {portfolio.title} <span aria-hidden="true">·</span>{" "}
+              {portfolio.location}
             </p>
+            <p className="hero-summary">{portfolio.presentation.summary}</p>
+            <ul
+              className="hero-focus-list"
+              aria-label="Competências técnicas em destaque"
+            >
+              {portfolio.skills.slice(0, 3).map((skill) => (
+                <li key={skill.name}>{skill.name}</li>
+              ))}
+            </ul>
             <div className="hero-actions">
               <a className="button button--lime" href="#projetos">
                 Ver projetos <span aria-hidden="true">↓</span>
               </a>
               {email && (
                 <a className="button button--light-outline" href="#contato">
-                  Entrar em contato <span aria-hidden="true">↗</span>
+                  Falar comigo <span aria-hidden="true">↗</span>
                 </a>
               )}
               {linkedin && (
@@ -242,12 +249,6 @@ export function PortfolioPage() {
             <span className="hero-orbit hero-orbit--two" aria-hidden="true" />
           </div>
 
-          <div className="hero-bottom">
-            <p>{portfolio.presentation.lookingFor}</p>
-            <a href="#projetos" aria-label="Ir para projetos">
-              Explore os projetos <span aria-hidden="true">↓</span>
-            </a>
-          </div>
         </section>
 
         {portfolio.projects.length > 0 && (
@@ -294,6 +295,10 @@ export function PortfolioPage() {
                       ))}
                     </ul>
                   )}
+                  <div className="project-card__result">
+                    <span>Resultado</span>
+                    <p>{project.result}</p>
+                  </div>
 
                   <details className="project-details">
                     <summary>
@@ -311,10 +316,6 @@ export function PortfolioPage() {
                       <div>
                         <h4>O que foi desenvolvido</h4>
                         <p>{project.details}</p>
-                      </div>
-                      <div>
-                        <h4>Resultado</h4>
-                        <p>{project.result}</p>
                       </div>
                     </div>
                   </details>

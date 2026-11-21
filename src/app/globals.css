@@ -251,7 +251,7 @@ summary:focus-visible {
 .hero-section {
   position: relative;
   display: grid;
-  min-height: 640px;
+  min-height: 580px;
   grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
   align-items: center;
   gap: clamp(2rem, 7vw, 6rem);
@@ -309,7 +309,7 @@ summary:focus-visible {
 .hero-copy h1 {
   max-width: 790px;
   margin: 1.1rem 0 0.3rem;
-  font-size: clamp(3.35rem, 8.5vw, 7.3rem);
+  font-size: clamp(3.35rem, 7.5vw, 6.3rem);
   font-weight: 720;
   letter-spacing: -0.085em;
   line-height: 0.98;
@@ -320,31 +320,37 @@ summary:focus-visible {
 }
 
 .hero-title {
-  margin: 1.1rem 0 1.4rem;
+  margin: 0.9rem 0 1rem;
   color: var(--forest);
-  font-size: clamp(1.02rem, 2vw, 1.22rem);
+  font-size: clamp(0.94rem, 1.5vw, 1.1rem);
   font-weight: 700;
 }
 
-.hero-full-name {
-  margin: 0.35rem 0 0;
-  color: var(--muted);
-  font-size: 0.88rem;
-  font-weight: 650;
-  letter-spacing: 0.01em;
-}
-
-.hero-summary,
-.hero-introduction {
+.hero-summary {
   max-width: 650px;
   margin: 0 0 0.95rem;
-  color: var(--muted);
+  color: var(--ink);
   font-size: clamp(0.95rem, 1.4vw, 1.06rem);
+  font-weight: 540;
 }
 
-.hero-summary {
-  color: var(--ink);
-  font-weight: 540;
+.hero-focus-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  list-style: none;
+}
+
+.hero-focus-list li {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--tag-text);
+  font-size: 0.72rem;
+  font-weight: 650;
 }
 
 .hero-actions {
@@ -519,31 +525,6 @@ summary:focus-visible {
   transform: translate(-18%, 32%);
 }
 
-.hero-bottom {
-  display: flex;
-  grid-column: 1 / -1;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  padding-top: 1.4rem;
-  border-top: 1px solid var(--line);
-}
-
-.hero-bottom p {
-  max-width: 720px;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.83rem;
-}
-
-.hero-bottom a {
-  flex: 0 0 auto;
-  color: var(--forest);
-  font-size: 0.78rem;
-  font-weight: 700;
-  text-decoration: none;
-}
-
 .content-section {
   padding-block: clamp(4.5rem, 9vw, 7.5rem);
   scroll-margin-top: 5.5rem;
@@ -589,7 +570,7 @@ summary:focus-visible {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.1rem;
 }
 
@@ -658,10 +639,32 @@ summary:focus-visible {
 }
 
 .project-card__summary {
-  min-height: 3.2em;
   margin: 0.8rem 0 1rem;
   color: var(--muted);
   font-size: 0.91rem;
+}
+
+.project-card__result {
+  padding: 0.8rem 0.9rem;
+  margin-top: auto;
+  margin-bottom: 1rem;
+  border-left: 2px solid var(--forest);
+  background: var(--soft-fill);
+}
+
+.project-card__result span {
+  color: var(--forest);
+  font-size: 0.67rem;
+  font-weight: 750;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.project-card__result p {
+  margin: 0.25rem 0 0;
+  color: var(--ink);
+  font-size: 0.78rem;
+  line-height: 1.5;
 }
 
 .tag-list {
@@ -1152,6 +1155,10 @@ summary:focus-visible {
     gap: 2rem;
   }
 
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .hero-art {
     min-height: 340px;
   }
@@ -1221,20 +1228,6 @@ summary:focus-visible {
 
   .hero-art {
     min-height: 300px;
-  }
-
-  .hero-bottom {
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
-  .hero-bottom p {
-    font-size: 0.75rem;
-  }
-
-  .hero-bottom a {
-    max-width: 115px;
-    font-size: 0.72rem;
   }
 
   .content-section {
