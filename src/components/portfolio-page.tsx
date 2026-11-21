@@ -223,13 +223,11 @@ export function PortfolioPage() {
 
           <div className="hero-art" aria-label="Apresentação de José Eric">
             <div className="hero-art__grid" aria-hidden="true" />
-            <div
-              className="portrait-monogram"
-              role="img"
-              aria-label="Iniciais JE; foto pessoal ainda não adicionada"
-            >
-              <span>JE</span>
-            </div>
+            <img
+              className="portrait-image"
+              src="https://github.com/joseeric26.png?size=512"
+              alt="Foto de perfil de José Eric no GitHub"
+            />
             <div className="hero-note hero-note--top">
               <span className="hero-note__symbol" aria-hidden="true">
                 {"{ }"}
